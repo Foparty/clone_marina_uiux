@@ -102,6 +102,12 @@ import Button from "./Button.astro";
   }
   .buttons {
     display: flex;
+    flex-direction: column;
+    align-items: end;
     gap: 0.5rem;
+    @media (width > 400px) {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 </style>
