@@ -1,0 +1,40 @@
+---
+import Button from "./Button.astro";
+const links = [
+  { title: "home", url: "/" },
+  { title: "plafrorm", url: "/" },
+  { title: "developers", url: "/" },
+  { title: "community", url: "/" },
+  { title: "learn", url: "/" },
+  { title: "about", url: "/" },
+];
+---
+
+<nav class="container">
+  <section class="logo">
+    <Button title={`/mango`} url="/" bg={false} noborder />
+  </section>
+  <section class="links">
+    {
+      links.map((item) => (
+        <Button bg={false} title={`/${item.title}`} url={item.url} noborder />
+      ))
+    }
+  </section>
+  <Button bg={true} title="[connect_wallet]" url="/" />
+</nav>
+
+<style>
+  .container {
+    height: 4rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .links {
+    display: flex;
+    gap: 0.7rem;
+    overflow: hidden;
+  }
+</style>
